@@ -1,0 +1,32 @@
+{
+    "id": "chatcmpl-Aq0hW8r3ybAsNqtzNk10DOZ5MaDG2",
+    "object": "chat.completion",
+    "created": 1736959114,
+    "model": "gpt-4-0613",
+    "usage": {
+        "prompt_tokens": 1197,
+        "completion_tokens": 330,
+        "total_tokens": 1527,
+        "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0
+        },
+        "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0
+        }
+    },
+    "choices": [
+        {
+            "message": {
+                "role": "assistant",
+                "content": "Document Details Extraction:\n\n1. Pay Slip:\n\n   - Employee: Ahmad Mustapha Dafer\n   - Employer: IBM UK\n   - Issuance Date: 18 January 2013\n   - Net Salary Amount: €1,000,000,000.00\n   - Deductions: None\n\n2. Bank Statement:\n\n   - Account Holder: AHMAD MUSTAPHA DAFER\n   - Bank: HSBC UK\n   - Statement Period: 11 January 2013 to 07 February 2014\n   - Salary Deposit Date: 18 January 2013\n   - Salary Deposit Amount: €1,000,000,000.00\n   - Other Transactions: Various payments in and out, including payments to NatWest, UK provident Fund, HSBC China, and received payments from Microsoft UK, British Petroleum, Shell BP, and a transfer from HSBC Dubai.\n\nAccuracy:\n\nComparison between pay slip and bank statement shows:\n\n- The Account Holder's name corresponds with the Employee's Name.\n- The Salary Deposit Date on the bank statement corresponds with the Issuance Date on the payslip.\n- The Salary Deposit Amount in bank statement corresponds with the Net Salary Amount in the payslip.\n\nThe correspondence score is 100% as all the key details listed on both documents match each other.\n\nShort Explanation on Score:\n\nThe 100% score is due to total alignment in the employee/account holder's name, net salary amount, and the salary payment date between the payslip and the bank statement. Thus, it is confirmed that the payslip corresponds to the bank statement."
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "index": 0
+        }
+    ]
+}

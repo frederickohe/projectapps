@@ -19,8 +19,8 @@ client = OpenAI(
 )
 
 # Read the first PDF document (replace with the actual file path)
-document_1 = read_pdf("findocs/document_1.pdf")
-document_2 = read_pdf("findocs/document_2.pdf")
+document_1 = read_pdf("findocs/payslip.pdf")
+document_2 = read_pdf("findocs/statement.pdf")
 
 # Define the system and user prompts
 system_message = """Your task is to function as an advanced finance documents analyser and investigator"""
@@ -28,9 +28,10 @@ user_prompt_1 = f"""
 You will analyze two consecutive financial documents: a pay slip and a bank statement. Follow these steps to extract key details and assess their correspondence:
 
 ### Document Details Extraction:
+
 1. Pay Slip: Extract and summarize:
-   - Name of the user
-   - Employer or organization
+   - Name of the employee
+   - Name of employer
    - Date of issuance
    - Net salary amount
    - Deductions and breakdown (if available)
@@ -44,12 +45,14 @@ You will analyze two consecutive financial documents: a pay slip and a bank stat
    - Amount deposited
    - Any additional relevant transactions
 
+### Accuracy:
 
-### Accuracy Score:
-   - Provide a score out of 100% based on how well the pay slip corresponds with the bank statement.
+3. Both Documents: Generate:
+   - A simple yes or no confirmation if the documents corresponds
+   - A score out of 100% based on how well the pay slip corresponds with the bank statement.
 
-### Score Justification:
-   - Justify the score by explaining areas of agreement or discrepancy.
+4. Both Documents:  Generate:
+   - A Short justification on the score by explaining areas of agreement or discrepancy.
 
 
 Financial Documents:
@@ -58,6 +61,8 @@ I will attach the first document here (Pay Slip):
 
 The second document also document here (Bank Statement):
 {document_2}
+
+keep your response concise and with no redundant repititions
 
 """
 
@@ -72,4 +77,7 @@ chat_completion = client.chat.completions.create(
 
 # Extract and print the response content
 response_message = chat_completion.choices[0].message.content
-print(response_message)
+
+# print(response_message)
+
+print(chat_completion)
